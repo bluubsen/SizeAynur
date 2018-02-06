@@ -3,6 +3,15 @@
 	{
 		"python3": "/home/dylan/Code/anyurotyakmaz/.env/bin/python"
 	},
+	"build_systems":
+	[
+		{
+			"file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
+			"name": "Anaconda Python Builder",
+			"selector": "source.python",
+			"shell_cmd": "\"/home/dylan/Code/anyurotyakmaz/.env/bin/python\" -u \"$file\""
+		}
+	],
 	"folders":
 	[
 		{
@@ -17,7 +26,7 @@
 			"/home/dylan/Code/anyurotyakmaz/.env/lib/python3.5/site-packages",
 			"/home/dylan/Code/anyurotyakmaz/.env/lib/python3.5"
 		],
-		"test_virtualenv": "~/Code/anyurotyakmaz/.env",
-		"test_command": "python ~/Code/anyurotyakmaz/transmitter/manage.py test --settings=tests.settings --noinput"
+		"test_command": "python ~/Code/anyurotyakmaz/portfolio/manage.py test --settings=tests.settings --noinput",
+		"test_virtualenv": "~/Code/anyurotyakmaz/.env"
 	}
 }
