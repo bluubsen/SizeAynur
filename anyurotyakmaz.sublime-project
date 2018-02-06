@@ -1,0 +1,23 @@
+{
+	"Python":
+	{
+		"python3": "/home/dylan/Code/anyurotyakmaz/.env/bin/python"
+	},
+	"folders":
+	[
+		{
+			"path": "portfolio"
+		}
+	],
+	"settings":
+	{
+		"python_interpreter": "~/Code/anyurotyakmaz/.env/bin/python",
+		"python_package_paths":
+		[
+			"/home/dylan/Code/anyurotyakmaz/.env/lib/python3.5/site-packages",
+			"/home/dylan/Code/anyurotyakmaz/.env/lib/python3.5"
+		],
+		"test_virtualenv": "~/Code/anyurotyakmaz/.env",
+		"test_command": "python ~/Code/anyurotyakmaz/transmitter/manage.py test --settings=tests.settings --noinput"
+	}
+}
