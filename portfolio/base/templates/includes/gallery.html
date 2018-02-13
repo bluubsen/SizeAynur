@@ -1,0 +1,9 @@
+{% load wagtailimages_tags %}
+
+{% image gallery.featured_image width-360 as img %}
+<a href="{{ gallery.get_url }}">
+    <div class="imagebox" style="width: {{ img.width }}px; height: {{ img.height }}px;">
+        <div class="imagetext"><p>{{ gallery.title }}</p></div>
+        <img src="{{ img.url  }}" alt="{{ gallery.title }}"/>
+    </div>
+</a>

@@ -1,0 +1,120 @@
+/* GENERAL */
+
+a {
+   outline: 0;
+}
+
+.template-normal {
+  margin: 150px 100px 30px 100px;
+}
+
+.template-richtext {
+  margin: 200px 300px 30px 300px;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+
+/* HEADER */
+
+header {
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  top: 20px;
+  left: 0;
+  right: 0;
+}
+
+#brand {
+  margin: 0 auto;
+  width: 400px;
+  padding-bottom: 30px;
+}
+
+#brand > h1 {
+  font-family: 'Oxygen', sans-serif;
+  text-transform: uppercase;
+  margin-bottom: -7px;
+}
+
+#brand > h2 {
+  font-size: 20px;
+  font-family: 'Arial', sans-serif;
+  font-weight: 200;
+}
+
+
+/* NAVBAR */
+
+nav {
+  margin-top: 70px;
+  text-align: center;
+}
+
+nav > a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: black;
+  font-family: 'Oxygen', sans-serif;
+  padding: 10px;
+  margin: 10px;
+}
+
+/* IMAGE PAGES */
+
+#gallery {
+  text-align: center;
+  -webkit-column-count: 3;
+  -webkit-column-gap:   5px;
+  -moz-column-count:    3;
+  -moz-column-gap:      5px;
+  column-count:         3;
+  column-gap:           5px;
+  column-width: 33%;
+}
+
+#gallery img {
+  width: 100%;
+  height: auto;
+}
+
+.imagebox {
+  position: relative;
+  margin-bottom: 5px;
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+.imagebox:hover .imagetext {
+  z-index: 1;
+}
+
+.imagetext {
+  z-index: -1;
+  text-align: center;
+  height: 99%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+}
+
+.imagetext p {
+  position: relative;
+  top: 38%;
+  font-family: 'Oxygen', sans-serif;
+}
+
+.imagebox div {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+}

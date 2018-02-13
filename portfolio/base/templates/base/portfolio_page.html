@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% load wagtailcore_tags %}
+
+{% block body_class %}template-normal{% endblock %}
+
+{% block content %}
+
+{{ page.body|richtext }}
+
+<div id="gallery">
+    {% for gallery in galleries %}
+        {% include "includes/gallery.html" %}
+    {% endfor %}
+</div>
+{% endblock %}
