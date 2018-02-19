@@ -19,8 +19,8 @@ PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE_DIR = os.path.dirname(PROJECT_DIR)
 
 
-# Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
+SECRET_KEY = '#tyisqe7a47v_kuo=0%6o8531&ovyej@jt&^v7xv8^=4@ek6g$'
 
 
 # Application definition
@@ -139,4 +139,4 @@ WAGTAIL_SITE_NAME = "portfolio"
 
 # Base URL to use when referring to full URLs within the Wagtail admin backend -
 # e.g. in notification emails. Don't include '/admin' or a trailing slash
-BASE_URL = 'http://example.com'
+BASE_URL = 'https://anyurotyakmaz.com'

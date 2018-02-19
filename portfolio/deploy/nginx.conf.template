@@ -1,0 +1,98 @@
+
+upstream %(proj_name)s {
+    server unix:%(proj_path)s/gunicorn.sock fail_timeout=0;
+}
+
+server {
+
+    listen 80;
+    %(ssl_disabled)s listen 443 ssl;
+    server_name %(domains_nginx)s;
+    client_max_body_size 10M;
+    keepalive_timeout    15;
+    error_log /home/%(user)s/logs/%(proj_name)s_error_nginx.log info;
+
+    # Deny illegal Host headers
+    if ($host !~* ^(%(domains_regex)s)$) {
+        return 444;
+    }
+
+    # Speed optimization stuff
+    gzip on;
+    gzip_comp_level    5;
+    gzip_min_length    256;
+    gzip_proxied       any;
+    gzip_vary          on;
+    gzip_types
+    application/atom+xml
+    application/javascript
+    application/json
+    application/ld+json
+    application/manifest+json
+    application/rss+xml
+    application/vnd.geo+json
+    application/vnd.ms-fontobject
+    application/x-font-ttf
+    application/x-web-app-manifest+json
+    application/xhtml+xml
+    application/xml
+    font/opentype
+    image/bmp
+    image/svg+xml
+    image/x-icon
+    text/cache-manifest
+    text/css
+    text/plain
+    text/vcard
+    text/vnd.rim.location.xloc
+    text/vtt
+    text/x-component
+    text/x-cross-domain-policy;
+
+
+
+    location / {
+        proxy_redirect      off;
+        proxy_set_header    Host                    $host;
+        proxy_set_header    X-Real-IP               $remote_addr;
+        proxy_set_header    X-Forwarded-For         $proxy_add_x_forwarded_for;
+        proxy_set_header    X-Forwarded-Protocol    $scheme;
+        proxy_pass          http://%(proj_name)s;
+    }
+
+    location /static/ {
+        root            %(proj_path)s;
+        access_log      off;
+        log_not_found   off;
+        expires 30d;
+    }
+
+    location /robots.txt {
+        root            %(proj_path)s/static;
+        access_log      off;
+        log_not_found   off;
+    }
+
+    location /humans.txt {
+        root            %(proj_path)s/static;
+        access_log      off;
+        log_not_found   off;
+    }
+
+    location /favicon.ico {
+        root            %(proj_path)s/static/img/favicon.ico;
+        access_log      off;
+        log_not_found   off;
+    }
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/dylanh.tk-0001/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/dylanh.tk-0001/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+    # Redirect non-https traffic to https
+    if ($scheme != "https") {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+}

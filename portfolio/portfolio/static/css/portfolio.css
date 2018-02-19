@@ -74,12 +74,11 @@ nav > a {
 #gallery {
   text-align: center;
   -webkit-column-count: 3;
-  -webkit-column-gap:   5px;
+  -webkit-column-gap:   25px;
   -moz-column-count:    3;
-  -moz-column-gap:      5px;
+  -moz-column-gap:      25px;
   column-count:         3;
-  column-gap:           5px;
-  column-width: 33%;
+  column-gap:           25px;
 }
 
 #gallery img {
@@ -89,7 +88,7 @@ nav > a {
 
 .imagebox {
   position: relative;
-  margin-bottom: 5px;
+  margin-bottom: 25px;
   -webkit-column-break-inside: avoid;
   page-break-inside: avoid;
   break-inside: avoid;
