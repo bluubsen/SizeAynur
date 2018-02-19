@@ -75,23 +75,23 @@ env.repo_path = env.proj_path
 
 templates = {
     "nginx": {
-        "local_path": "deploy/nginx.conf.template",
+        "local_path": "%(proj_name)s/deploy/nginx.conf.template",
         "remote_path": "/etc/nginx/sites-enabled/%(proj_name)s.conf",
         "reload_command": "service nginx restart",
     },
     "supervisor": {
-        "local_path": "deploy/supervisor.conf.template",
+        "local_path": "%(proj_name)s/deploy/supervisor.conf.template",
         "remote_path": "/etc/supervisor/conf.d/%(proj_name)s.conf",
         "reload_command": "supervisorctl update gunicorn_%(proj_name)s",
     },
     "cron": {
-        "local_path": "deploy/crontab.template",
+        "local_path": "%(proj_name)s/deploy/crontab.template",
         "remote_path": "/etc/cron.d/%(proj_name)s",
         "owner": "root",
         "mode": "644",
     },
     "gunicorn": {
-        "local_path": "deploy/gunicorn.conf.py.template",
+        "local_path": "%(proj_name)s/deploy/gunicorn.conf.py.template",
         "remote_path": "%(proj_path)s/gunicorn.conf.py",
     }
 }
