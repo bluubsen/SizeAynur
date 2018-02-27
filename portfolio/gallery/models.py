@@ -2,9 +2,8 @@ from django.utils.translation import ugettext_lazy as _
 from django.db import models
 
 from wagtail.wagtailcore.models import Page, Orderable
-from wagtail.wagtailadmin.edit_handlers import InlinePanel
+from wagtail.wagtailadmin.edit_handlers import InlinePanel, FieldPanel
 from wagtail.wagtailimages.edit_handlers import ImageChooserPanel
-from wagtail.wagtailimages.models import Image, AbstractImage, AbstractRendition
 
 from modelcluster.fields import ParentalKey
 
@@ -15,14 +14,6 @@ class GalleryPage(Page):
         'wagtailimages.Image', on_delete=models.PROTECT, related_name='+',
         verbose_name=_("featured image"), null=True,
     )
-
-    content_panels = Page.content_panels + [
-        ImageChooserPanel('featured_image'),
-        InlinePanel('gallery_images', label=_("gallery images")),
-    ]
-
-
-class Img(AbstractImage):
     client_name = models.CharField(
         verbose_name=_("client name"),
         max_length=100,
@@ -33,25 +24,12 @@ class Img(AbstractImage):
         blank=True, null=True,
     )
 
-    admin_form_fields = (
-        'title',
-        'file',
-        'client_name',
-        'client_url',
-        'focal_point_x',
-        'focal_point_y',
-        'focal_point_width',
-        'focal_point_height',
-    )
-
-
-class CustomRendition(AbstractRendition):
-    image = models.ForeignKey(Img, related_name='renditions')
-
-    class Meta:
-        unique_together = (
-            ('image', 'filter_spec', 'focal_point_key'),
-        )
+    content_panels = Page.content_panels + [
+        ImageChooserPanel('featured_image'),
+        FieldPanel('client_name'),
+        FieldPanel('client_url'),
+        InlinePanel('gallery_images', label=_("gallery images")),
+    ]
 
 
 class GalleryImage(Orderable):
@@ -62,7 +40,7 @@ class GalleryImage(Orderable):
         related_name='gallery_images',
     )
     image = models.ForeignKey(
-        'gallery.Img',
+        'wagtailimages.Image',
         on_delete=models.PROTECT,
         related_name='+',
         verbose_name=_("image"),

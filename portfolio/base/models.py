@@ -1,9 +1,25 @@
 from django.utils.translation import ugettext_lazy as _
-from gallery.models import GalleryPage
+from django.db import models
 
 from wagtail.wagtailcore.models import Page
 from wagtail.wagtailcore.fields import RichTextField
 from wagtail.wagtailadmin.edit_handlers import FieldPanel
+from wagtail.wagtailimages.edit_handlers import ImageChooserPanel
+
+from gallery.models import GalleryPage
+
+
+class LandingPage(Page):
+    text = RichTextField(blank=True, verbose_name=_("content"))
+    image = models.ForeignKey(
+        'wagtailimages.Image', on_delete=models.PROTECT, related_name='+',
+        verbose_name=_("image"), null=True,
+    )
+
+    content_panels = Page.content_panels + [
+        FieldPanel('text', classname="full"),
+        ImageChooserPanel('image'),
+    ]
 
 
 class PortfolioPage(Page):

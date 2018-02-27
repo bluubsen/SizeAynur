@@ -13,6 +13,8 @@ DATABASES = {
     }
 }
 
+FILE_UPLOAD_PERMISSIONS = 0o644
+
 ALLOWED_HOSTS = ["aynurotyakmaz.com", "www.aynurotyakmaz.com"]
 
 ADMINS = [('Dylan Peter Hayward', "dylanpeterhayward@gmail.com")]

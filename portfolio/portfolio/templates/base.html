@@ -25,7 +25,7 @@
 
   {# Global stylesheets #}
   <link rel="stylesheet" type="text/css" href="{% static 'css/portfolio.css' %}">
-  <link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Oxygen|Montserrat|Fira+Sans" rel="stylesheet">
 
   {% block extra_css %}
       {# Override this in templates to add extra stylesheets #}
@@ -35,12 +35,14 @@
 <body class="{% block body_class %}{% endblock %}">
   {% wagtailuserbar %}
 
+  {% block header %}
   <header>
   <div id="brand">
-    <h1>Vorname Nachname</h1>
-    <h2>- Beruf -</h2>
+    <h1>Aynur Otyakmaz</h1>
+    <h2>- Hair & Makeup -</h2>
   </div>
   </header>
+  {% endblock %}
 
   {% block content %}{% endblock %}
 

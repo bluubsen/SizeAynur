@@ -492,18 +492,18 @@ def create():
         pip("gunicorn setproctitle psycopg2 "
             "django-compressor python-memcached")
     # Bootstrap the DB
-        if env.admin_pass:
-            login = env.admin_login
-            pw = env.admin_pass
-            user_py = ("from django.contrib.auth import get_user_model;"
-                       "User = get_user_model();"
-                       "u, _ = User.objects.get_or_create(username='%s');"
-                       "u.is_staff = u.is_superuser = True;"
-                       "u.set_password('%s');"
-                       "u.save();" % (login, pw))
-            python(user_py, show=False)
-            shadowed = "*" * len(pw)
-            print_command(user_py.replace("'%s'" % pw, "'%s'" % shadowed))
+        # if env.admin_pass:
+        #     login = env.admin_login
+        #     pw = env.admin_pass
+        #     user_py = ("from django.contrib.auth import get_user_model;"
+        #                "User = get_user_model();"
+        #                "u, _ = User.objects.get_or_create(username='%s');"
+        #                "u.is_staff = u.is_superuser = True;"
+        #                "u.set_password('%s');"
+        #                "u.save();" % (login, pw))
+        #     python(user_py, show=False)
+        #     shadowed = "*" * len(pw)
+        #     print_command(user_py.replace("'%s'" % pw, "'%s'" % shadowed))
 
     return True
 
