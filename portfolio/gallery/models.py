@@ -10,6 +10,7 @@ from modelcluster.fields import ParentalKey
 
 class GalleryPage(Page):
     """ Displays a featured image to represent a set of gallery images. """
+
     featured_image = models.ForeignKey(
         'wagtailimages.Image', on_delete=models.PROTECT, related_name='+',
         verbose_name=_("featured image"), null=True,
@@ -29,6 +30,7 @@ class GalleryPage(Page):
 
 class GalleryImage(Orderable):
     """ Individual image that can be sorted into a GalleryPage."""
+
     page = ParentalKey(
         GalleryPage,
         on_delete=models.PROTECT,
@@ -42,5 +44,42 @@ class GalleryImage(Orderable):
     )
 
     panels = [
+        ImageChooserPanel('image'),
+    ]
+
+
+class VideoPage(Page):
+    """ Creates page for list in main menu that displays all videos."""
+
+    content_panels = Page.content_panels + [
+        InlinePanel('videos', label=_("videos")),
+    ]
+
+
+class Video(Orderable):
+    page = ParentalKey(
+        VideoPage,
+        on_delete=models.PROTECT,
+        related_name='videos',
+    )
+    client_name = models.CharField(
+        verbose_name=_("client name"),
+        max_length=100,
+        blank=True, null=True,
+    )
+    video_url = models.URLField(
+        verbose_name=_('video URL')
+    )
+    image = models.ForeignKey(
+        'wagtailimages.Image',
+        on_delete=models.PROTECT,
+        related_name='+',
+        verbose_name=_("image"),
+        null=True,
+    )
+
+    panels = [
+        FieldPanel('client_name'),
+        FieldPanel('video_url'),
         ImageChooserPanel('image'),
     ]

@@ -1,0 +1,6 @@
+{% load wagtailimages_tags %}
+
+{% image video.image width-400 as img %}
+<div class="imagebox">
+    <a class="video-link" href="#" data-url="{{ video.video_url }}?autoplay=1"><img src="{{ img.url }}" alt="{{ video.client_name }}"/></a>
+</div>

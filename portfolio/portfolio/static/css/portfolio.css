@@ -20,8 +20,12 @@ a:hover {
     margin: 250px 80px 30px 80px;
   }
 
-  .template-richtext, .template-lander {
+  .template-richtext  {
     margin: 250px 300px 30px 300px;
+  }
+
+  .template-lander {
+    margin: 200px 300px 30px 300px;
   }
 }
 
@@ -30,8 +34,12 @@ a:hover {
     margin: 250px 30px 30px 10px;
   }
 
-  .template-richtext, .template-lander {
+  .template-richtext  {
     margin: 250px 300px 30px 300px;
+  }
+
+  .template-lander {
+    margin: 200px 300px 30px 300px;
   }
 }
 
@@ -40,8 +48,12 @@ a:hover {
     margin: 250px 0px 30px 0px;
   }
 
-  .template-richtext, .template-lander {
-    margin: 250px 60px 30px 60px;
+  .template-richtext  {
+    margin: 250px 100px 30px 100px;
+  }
+
+  .template-lander {
+    margin: 200px 100px 30px 100px;
   }
 }
 
@@ -85,6 +97,7 @@ h3 {
   font-weight: 200;
   letter-spacing: 3px;
   text-transform: uppercase;
+  color: black;
 }
 
 h4 {
@@ -92,6 +105,7 @@ h4 {
   font-weight: 200;
   letter-spacing: 3px;
   text-transform: uppercase;
+  color: black;
 }
 
 p, .rich-text {
@@ -108,7 +122,7 @@ body.template-lander {
 
 .lander-content {
   margin: 0;
-  padding-bottom: 40px;
+  padding-bottom: 400px;
 }
 
 .lander-content > div.rich-text {
@@ -120,6 +134,19 @@ body.template-lander {
   font-size: 22px;
   line-height: 29px;
   text-transform: uppercase;
+}
+
+.lander-content img {
+  position: absolute;
+  transition: opacity .5s ease-in;
+    left: 0; 
+  right: 0; 
+  margin-left: auto; 
+  margin-right: auto; 
+}
+
+.lander-content img + img { 
+  opacity: 0;
 }
 
 /* HEADER */
@@ -134,8 +161,12 @@ header {
 }
 
 #brand > h1 {
+  margin-top: -10px;
+}
+
+#brand > h2 {
   margin-top: 60px;
-  margin-bottom: -10px;
+  font-size: 12px;
 }
 
 /* NAVBAR */
@@ -151,9 +182,9 @@ nav {
 nav > a, .nav > a {
   text-transform: uppercase;
   padding: 10px;
-  margin: 10px;
-  font-size: 14px;
-  letter-spacing: 3px;
+  margin: 3px;
+  font-size: 12px;
+  letter-spacing: 2px;
   color: #666666;
 }
 
@@ -185,39 +216,39 @@ nav > a:hover, .nav > a:hover {
   }
 
   #gallery .imagebox {
-    width: 500px;
+    width: 570px;
   }
 
   #portfolio .imagebox {
-    width: 250px;
+    width: 270px;
   }
 }
 
 @media screen and (min-width: 1000px) and (max-width: 1249px){
   #portfolio, #gallery {
-    width: 850px;
+    width: 1000px;
   }
 
   #gallery .imagebox {
-    width: 400px;
+    width: 470px;
   }
 
   #portfolio .imagebox {
-    width: 250px;
+    width: 300px;
   }
 }
 
-@media screen and (min-width: 600px) and (max-width: 999px){
+@media screen and (min-width: 700px) and (max-width: 999px){
   #portfolio, #gallery {
-    width: 550px;
+    width: 700px;
   }
 
   #gallery .imagebox {
-    width: 250px;
+    width: 320px;
   }
 
   #portfolio .imagebox {
-    width: 175px;
+    width: 320px;
   }
 }
 
@@ -299,6 +330,7 @@ span.caption > a {
   top: 30%;
 }
 
+
 /* FOOTER */
 
 footer {
@@ -307,5 +339,51 @@ footer {
 }
 
 footer > a {
-  margin: 0 20px 0 20px;
+  margin: 0 10px 0 10px;
 }
+
+
+/* VIDEO */
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+#ytplayer {
+  width: 100%;
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
