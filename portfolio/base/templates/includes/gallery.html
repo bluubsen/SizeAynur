@@ -1,15 +1,15 @@
 {% load wagtailimages_tags %}
 
-{% image gallery.featured_image width-360 as img %}
+{% image page.gallerypage.featured_image width-360 as img %}
 <div class="imagebox">
-    <a href="{{ gallery.get_url }}">
-        <div class="imagetext"><p>{{ gallery.title }}</p></div>
+    <a href="{{ page.gallerypage.get_url }}">
+        <div class="imagetext"><p>{{ page.gallerypage.title }}</p></div>
     </a>
-    <img src="{{ img.url }}" alt="{{ gallery.title }}"/>
+    <img src="{{ img.url }}" alt="{{ page.gallerypage.title }}"/>
 
-    {% if gallery.client_name %}
+    {% if page.gallerypage.client_name %}
         <span class="caption">
-        {{ gallery.client_name }}
+        {{ page.gallerypage.client_name }}
         </span>
     {% endif %}
 </div>

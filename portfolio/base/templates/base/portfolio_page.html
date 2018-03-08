@@ -6,10 +6,8 @@
 
 {% block content %}
 
-{{ page.body|richtext }}
-
 <div id="portfolio">
-    {% for gallery in galleries %}
+    {% for page in page.get_children.live %}
         {% include "includes/gallery.html" %}
     {% endfor %}
 </div>

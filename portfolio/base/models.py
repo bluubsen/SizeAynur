@@ -35,7 +35,7 @@ class PortfolioPage(Page):
     ]
 
     def get_context(self, request):
-        context = super().get_context(request)
+        context = super(PortfolioPage, self).get_context(request)
         context['galleries'] = GalleryPage.objects.all().live()
         return context
 

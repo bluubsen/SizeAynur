@@ -5,7 +5,9 @@
 {% block body_class %}template-normal{% endblock %}
 
 {% block content %}
+
 <div id="gallery">
+    <div class="grid-sizer"></div>
     {% for photo in page.gallery_images.all %}
         {% include "includes/image.html" %}
     {% endfor %}

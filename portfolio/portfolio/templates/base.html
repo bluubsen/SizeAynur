@@ -25,11 +25,24 @@
 
   {# Global stylesheets #}
   <link rel="stylesheet" type="text/css" href="{% static 'css/portfolio.css' %}">
-  <link href="https://fonts.googleapis.com/css?family=Oxygen|Montserrat|Fira+Sans" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
 
   {% block extra_css %}
       {# Override this in templates to add extra stylesheets #}
   {% endblock %}
+
+  <!-- Global site tag (gtag.js) - Google Analytics
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114952565-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-114952565-1');
+  </script> -->
+  <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="{% static "js/masonry.pkgd.min.js" %}"></script>
 </head>
 
 <body class="{% block body_class %}{% endblock %}">
@@ -39,14 +52,13 @@
   <header>
   <div id="brand">
     <h1>Aynur Otyakmaz</h1>
-    <h2>- Hair & Makeup -</h2>
+    <h2>Hair & Makeup</h2>
   </div>
   </header>
   {% endblock %}
 
-  {% block content %}{% endblock %}
-
   <nav>
+    <a href="/">Home</a>
     {% block menu %}
       {% get_site_root as site_root %}
       {% top_menu parent=site_root calling_page=self as menuitems %}
@@ -55,6 +67,16 @@
       {% endfor %}
     {% endblock %}
   </nav>
+
+  {% block content %}{% endblock %}
+
+  <footer>
+    <a href="#"><i class="fab fa-instagram fa-2x"></i></a>
+    <a href="#"><i class="fab fa-facebook fa-2x"></i></a>
+    <a href="#"><i class="fab fa-linkedin fa-2x"></i></a>
+    <a href="#"><i class="fab fa-twitter fa-2x"></i></a>
+    <div class="nav"><a href="/impressum">Impressum</a></div>
+  </footer>
 
   {# Global javascript #}
   <script type="text/javascript" src="{% static 'js/portfolio.js' %}"></script>

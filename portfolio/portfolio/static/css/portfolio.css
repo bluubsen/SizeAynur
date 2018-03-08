@@ -1,21 +1,59 @@
 /* GENERAL */
 
 * {
-  font-family: 'Oxygen', sans-serif;
+  font-family: 'PT Sans', sans-serif;
 }
 
 a {
   outline: 0;
+  color: black;
+  text-decoration: none;
+  transition-duration: 1s;
 }
 
-.template-normal {
-  margin: 180px 100px 30px 100px;
+a:hover {
+  color: #999999;
 }
 
-.template-richtext {
-  margin: 200px 300px 30px 300px;
+@media screen and (min-width: 1250px) {
+  .template-normal {
+    margin: 250px 80px 30px 80px;
+  }
+
+  .template-richtext, .template-lander {
+    margin: 250px 300px 30px 300px;
+  }
 }
 
+@media screen and (min-width: 1000px) and (max-width: 1249px){
+  .template-normal {
+    margin: 250px 30px 30px 10px;
+  }
+
+  .template-richtext, .template-lander {
+    margin: 250px 300px 30px 300px;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 999px){
+  .template-normal {
+    margin: 250px 0px 30px 0px;
+  }
+
+  .template-richtext, .template-lander {
+    margin: 250px 60px 30px 60px;
+  }
+}
+
+@media screen and (max-width: 599px){
+  .template-normal {
+    margin: 380px 0px 40px 0px;
+  }
+
+  .template-richtext, .template-lander {
+    margin: 380px 40px 30px 40px;
+  }
+}
 
 .noselect {
   -webkit-touch-callout: none; /* iOS Safari */
@@ -27,27 +65,60 @@ a {
                                   supported by Chrome and Opera */
 }
 
+h1 {
+  font-weight: normal;
+  font-size: 22px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 14px;
+  font-weight: 200;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #666666;
+}
+
+h3 {
+  font-size: 12px;
+  font-weight: 200;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+h4 {
+  font-size: 12px;
+  font-weight: 200;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+p, .rich-text {
+  font-size: 14px;
+  font-weight: 200;
+  color: #666666;
+}
 
 /* LANDER */
 
 body.template-lander {
-  width: 100%;
   text-align: center;
 }
 
+.lander-content {
+  margin: 0;
+  padding-bottom: 40px;
+}
+
 .lander-content > div.rich-text {
-  border-bottom: 1px solid #dddddd;
-  padding-bottom: 20px;
   margin: 20px 0 32px 0;
 }
 
 .lander-content > div.rich-text > p {
-  margin: 40px auto;
-  width: 50%;
-  font-family: 'Montserrat', sans-serif;
   font-weight: normal;
-  font-size: 50px;
-  line-height: 45px;
+  font-size: 22px;
+  line-height: 29px;
   text-transform: uppercase;
 }
 
@@ -60,59 +131,121 @@ header {
   top: 0;
   left: 0;
   background-color: white;
-  border-bottom: 1px #dddddd solid;
 }
 
 #brand > h1 {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: normal;
-  font-size: 43px;
-  text-transform: uppercase;
+  margin-top: 60px;
   margin-bottom: -10px;
 }
 
-#brand > h2 {
-  font-size: 20px;
-  font-family: 'Arial', sans-serif;
-  font-weight: 200;
+/* NAVBAR */
+
+nav {
+  position: absolute;
+  top: 150px;
+  width: 100%;
+  left: 0;
+  text-align: center;
+}
+
+nav > a, .nav > a {
+  text-transform: uppercase;
+  padding: 10px;
+  margin: 10px;
+  font-size: 14px;
+  letter-spacing: 3px;
+  color: #666666;
+}
+
+@media screen and (max-width: 599px){
+  nav > a {
+    display: block;
+    padding: 5px 0;
+    margin: 5px 0;
+  }
+}
+
+nav > a:hover, .nav > a:hover {
+  color: #000000;
+}
+
+.nav {
+  padding-top: 20px;  
+}
+
+.nav > a {
+  font-size: 12px;
 }
 
 
 /* IMAGE PAGES */
+@media screen and (min-width: 1250px) {
+  #portfolio, #gallery {
+    width: 1200px;
+  }
 
-#portfolio {
-  text-align: center;
-  -webkit-column-count: 4;
-  -webkit-column-gap:   25px;
-  -moz-column-count:    4;
-  -moz-column-gap:      25px;
-  column-count:         4;
-  column-gap:           25px;
+  #gallery .imagebox {
+    width: 500px;
+  }
+
+  #portfolio .imagebox {
+    width: 250px;
+  }
 }
 
-#gallery {
-  text-align: center;
-  -webkit-column-count: 2;
-  -webkit-column-gap:   25px;
-  -moz-column-count:    2;
-  -moz-column-gap:      25px;
-  column-count:         2;
-  column-gap:           25px;
+@media screen and (min-width: 1000px) and (max-width: 1249px){
+  #portfolio, #gallery {
+    width: 850px;
+  }
+
+  #gallery .imagebox {
+    width: 400px;
+  }
+
+  #portfolio .imagebox {
+    width: 250px;
+  }
 }
 
-#gallery img, #portfolio img {
-  width: 100%;
-  height: auto;
+@media screen and (min-width: 600px) and (max-width: 999px){
+  #portfolio, #gallery {
+    width: 550px;
+  }
+
+  #gallery .imagebox {
+    width: 250px;
+  }
+
+  #portfolio .imagebox {
+    width: 175px;
+  }
+}
+
+@media screen and (max-width: 599px){
+  #portfolio, #gallery {
+    width: 300px;
+  }
+
+  #gallery .imagebox {
+    width: 300px;
+  }
+
+  #portfolio .imagebox {
+    width: 300px;
+  }
+}
+
+#portfolio, #gallery {
+  text-align: center;
+  margin: 0 auto;
 }
 
 .imagebox {
-  position: relative;
   border: 1px solid #dddddd;
-  background-color: #fafafa;
-  margin-bottom: 40px;
-  -webkit-column-break-inside: avoid;
-  page-break-inside: avoid;
-  break-inside: avoid;
+  margin-bottom: 20px;
+  margin-right: 10px;
+  margin-left: 10px;
+  float: left;
 }
 
 .imagetext {
@@ -122,17 +255,21 @@ header {
 }
 
 .imagetext p {
-  color: white;
+  color: rgba(0, 0, 0, 0.0);
   transition: color 3s;
 }
 
 .imagebox:hover .imagetext {
-  z-index: 2;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.7);
 }
 
 .imagebox:hover .imagetext > p {
-  color: black;
+  color: rgba(0, 0, 0, 1.0);
+}
+
+.imagebox img {
+  width: 100%;
+  height: auto;
 }
 
 .imagebox div {
@@ -142,18 +279,15 @@ header {
 span.caption {
   font-size: 14px;
   color: #777777;
-  font-family: 'Fira Sans';
   text-transform: uppercase;
 }
 
 span.caption > a {
-  text-decoration: none;
-  color: black;
   font-weight: bold;
 }
 
 .imagetext {
-  z-index: -1;
+  z-index: 1;
   text-align: center;
   height: 100%;
   width: 101%;
@@ -165,26 +299,13 @@ span.caption > a {
   top: 30%;
 }
 
+/* FOOTER */
 
-/* NAVBAR */
-
-nav {
-  background-color: white;
-  border-top: 1px #dddddd solid;
-  position: absolute;
-  margin-top: 30px;
-  padding-top: 20px;
-  padding-bottom: 40px;
-  width: 100%;
-  left: 0;
+footer {
+  margin: 40px;
   text-align: center;
 }
 
-nav > a {
-  text-decoration: none;
-  text-transform: uppercase;
-  color: black;
-  font-family: 'Oxygen', sans-serif;
-  padding: 10px;
-  margin: 10px;
+footer > a {
+  margin: 0 20px 0 20px;
 }

@@ -19,15 +19,10 @@ class GalleryPage(Page):
         max_length=100,
         blank=True, null=True,
     )
-    client_url = models.URLField(
-        verbose_name=_("client url"),
-        blank=True, null=True,
-    )
 
     content_panels = Page.content_panels + [
         ImageChooserPanel('featured_image'),
         FieldPanel('client_name'),
-        FieldPanel('client_url'),
         InlinePanel('gallery_images', label=_("gallery images")),
     ]
 
