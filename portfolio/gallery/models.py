@@ -67,8 +67,12 @@ class Video(Orderable):
         max_length=100,
         blank=True, null=True,
     )
-    video_url = models.URLField(
-        verbose_name=_('video URL')
+    youtube_code = models.CharField(
+        max_length=50,
+        verbose_name=_('YouTube Code'),
+        help_text="z.B. OKRJfIPiJGY. Guck mal: " \
+                  "https://support.google.com/youtube/answer/171780?hl=de",
+        null=True, blank=True,
     )
     image = models.ForeignKey(
         'wagtailimages.Image',
@@ -80,6 +84,6 @@ class Video(Orderable):
 
     panels = [
         FieldPanel('client_name'),
-        FieldPanel('video_url'),
+        FieldPanel('youtube_code'),
         ImageChooserPanel('image'),
     ]
