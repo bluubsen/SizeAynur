@@ -5,7 +5,5 @@
 {% block body_class %}template-richtext{% endblock %}
 
 {% block content %}
-    <h1>{{ page.title|upper }}</h1>
-
     {{ page.body|richtext }}
 {% endblock %}

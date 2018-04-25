@@ -138,7 +138,7 @@ body.template-lander {
 
 .lander-content img {
   position: absolute;
-  transition: opacity .5s ease-in;
+  transition: opacity 1.0s ease-in;
     left: 0; 
   right: 0; 
   margin-left: auto; 
@@ -211,12 +211,16 @@ nav > a:hover, .nav > a:hover {
 
 /* IMAGE PAGES */
 @media screen and (min-width: 1250px) {
-  #portfolio, #gallery {
+  #portfolio, #gallery, #video {
     width: 1200px;
   }
 
   #gallery .imagebox {
     width: 570px;
+  }
+
+  #video .imagebox {
+    width: 360px;
   }
 
   #portfolio .imagebox {
@@ -225,11 +229,15 @@ nav > a:hover, .nav > a:hover {
 }
 
 @media screen and (min-width: 1000px) and (max-width: 1249px){
-  #portfolio, #gallery {
+  #portfolio, #gallery, #video {
     width: 1000px;
   }
 
   #gallery .imagebox {
+    width: 470px;
+  }
+
+  #video .imagebox {
     width: 470px;
   }
 
@@ -239,11 +247,15 @@ nav > a:hover, .nav > a:hover {
 }
 
 @media screen and (min-width: 700px) and (max-width: 999px){
-  #portfolio, #gallery {
+  #portfolio, #gallery, #video {
     width: 700px;
   }
 
   #gallery .imagebox {
+    width: 320px;
+  }
+
+  #video .imagebox {
     width: 320px;
   }
 
@@ -253,11 +265,15 @@ nav > a:hover, .nav > a:hover {
 }
 
 @media screen and (max-width: 599px){
-  #portfolio, #gallery {
+  #portfolio, #gallery, #video {
     width: 300px;
   }
 
   #gallery .imagebox {
+    width: 300px;
+  }
+
+  #video .imagebox {
     width: 300px;
   }
 
@@ -266,7 +282,7 @@ nav > a:hover, .nav > a:hover {
   }
 }
 
-#portfolio, #gallery {
+#portfolio, #gallery, #video {
   text-align: center;
   margin: 0 auto;
 }
@@ -356,16 +372,17 @@ footer > a {
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
 }
 
 /* Modal Content/Box */
 .modal-content {
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-    margin: 5% auto; /* 15% from the top and centered */
-    padding: 20px;
-    width: 70%; /* Could be more or less, depending on screen size */
+    margin: 2.5% auto;
+    padding: 50px;
+    width: 95%; /* Could be more or less, depending on screen size */
+    height: 95%;
 }
 
 #ytplayer {

@@ -6,9 +6,21 @@
 
 {% block content %}
 
+{% if page.title == "Advertising" %}
+<div id="video">
+    <div class="grid-sizer"></div>
+    {% for page in page.get_children.live %}
+        {% for photo in page.gallerypage.gallery_images.all %}
+            {% include "includes/image.html" %}
+        {% endfor %}
+    {% endfor %}
+</div>
+{% else %}
 <div id="portfolio">
+    <div class="grid-sizer"></div>
     {% for page in page.get_children.live %}
         {% include "includes/gallery.html" %}
     {% endfor %}
 </div>
+{% endif %}
 {% endblock %}

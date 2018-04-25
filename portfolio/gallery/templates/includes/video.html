@@ -2,5 +2,16 @@
 
 {% image video.image width-400 as img %}
 <div class="imagebox">
-    <a class="video-link" href="#" data-url="https://youtube.com/embed/{{ video.youtube_code }}?autoplay=1"><img src="{{ img.url }}" alt="{{ video.client_name }}"/></a>
+    <a class="video-link" href="#" data-url="https://youtube.com/embed/{{ video.youtube_code }}?autoplay=1">
+        <div class="imagetext">
+            <p>{{ video.description }}</p>
+        </div>
+    </a>
+    <img src="{{ img.url }}" alt="{{ video.client_name }}"/>
+
+    {% if video.client_name %}
+        <span class="caption">
+        {{ video.client_name }}
+        </span>
+    {% endif %}
 </div>

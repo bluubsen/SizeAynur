@@ -67,6 +67,11 @@ class Video(Orderable):
         max_length=100,
         blank=True, null=True,
     )
+    description = models.CharField(
+        verbose_name=_("description"),
+        max_length=100,
+        blank=True, null=True,
+    )
     youtube_code = models.CharField(
         max_length=50,
         verbose_name=_('YouTube Code'),
@@ -84,6 +89,7 @@ class Video(Orderable):
 
     panels = [
         FieldPanel('client_name'),
+        FieldPanel('description'),
         FieldPanel('youtube_code'),
         ImageChooserPanel('image'),
     ]

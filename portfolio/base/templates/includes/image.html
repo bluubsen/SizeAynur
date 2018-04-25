@@ -1,0 +1,6 @@
+{% load wagtailimages_tags %}
+
+{% image photo.image width-500 as img %}
+<div class="imagebox">
+    <img src="{{ img.url }}" alt="{{ img.image.title }}"/>
+</div>
