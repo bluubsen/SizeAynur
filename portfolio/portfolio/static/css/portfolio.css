@@ -139,7 +139,7 @@ body.template-lander {
 .lander-content img {
   position: absolute;
   transition: opacity 1.0s ease-in;
-    left: 0; 
+  left: 0;
   right: 0; 
   margin-left: auto; 
   margin-right: auto; 
@@ -157,7 +157,6 @@ header {
   width: 100%;
   top: 0;
   left: 0;
-  background-color: white;
 }
 
 #brand > h1 {
@@ -168,6 +167,28 @@ header {
   margin-top: 60px;
   font-size: 12px;
 }
+
+#social-logos {
+  position: absolute;
+  top: 75px;
+  right: 20%;
+  text-align: right;
+  z-index: 1;
+}
+
+#social-logos > a {
+  margin: 5px;
+}
+
+@media screen and (max-width: 1000px){
+  #social-logos {
+    position: absolute;
+    width: 100%;
+    top: 20px;
+    text-align: center;
+  }
+}
+
 
 /* NAVBAR */
 
