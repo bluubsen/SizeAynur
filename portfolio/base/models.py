@@ -61,7 +61,15 @@ class PortfolioPage(Page):
 
 class RichTextPage(Page):
     body = RichTextField(blank=True, verbose_name=_("content"))
+    profile = models.ForeignKey(
+        'wagtailimages.Image',
+        on_delete=models.PROTECT,
+        related_name='+',
+        verbose_name=_("optional profile image"),
+        null=True, blank=True,
+    )
 
     content_panels = Page.content_panels + [
+        ImageChooserPanel('profile'),
         FieldPanel('body', classname="full"),
     ]

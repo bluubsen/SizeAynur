@@ -1,9 +1,14 @@
 {% extends "base.html" %}
 
-{% load wagtailcore_tags %}
+{% load wagtailcore_tags wagtailimages_tags %}
+
 
 {% block body_class %}template-richtext{% endblock %}
 
 {% block content %}
+    {% if page.profile %}
+        {% image page.profile fill-200x200 as img %}
+        <div style="float: left; padding-right: 20px;"><img src="{{ img.url }}" alt="{{ img.image.title }}" style="border-radius: 50%;"/></div>
+    {% endif %}
     {{ page.body|richtext }}
 {% endblock %}
