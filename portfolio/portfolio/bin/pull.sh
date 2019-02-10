@@ -22,8 +22,8 @@ git pull https://$GIT_LOGIN:$GIT_PASS@gitlab.com/$GIT_PATH/$URL.git
 
 echo ""
 echo "+ Updating supervisor + nginx config files."
-sudo cp $GIT_DIR/$PROJECT/$PROJECT/settings/supervisor/supervisord.conf /etc/supervisor/conf.d/dylanh-net.conf
-sudo cp $GIT_DIR/$PROJECT/$PROJECT/settings/nginx/dylanh-net.conf /etc/nginx/conf.d/dylanh-net.conf
+sudo cp $GIT_DIR/$PROJECT/$PROJECT/settings/supervisor/aynurotyakmaz-com.conf /etc/supervisor/conf.d/aynurotyakmaz-com.conf
+sudo cp $GIT_DIR/$PROJECT/$PROJECT/settings/nginx/aynurotyakmaz-com.conf /etc/nginx/conf.d/aynurotyakmaz-com.conf
 
 echo ""
 echo "+ Copy files to /var/www"
