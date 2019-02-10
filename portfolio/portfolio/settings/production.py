@@ -23,7 +23,7 @@ SERVER_EMAIL = '"Mr. Robot" <serverbot@transmitter-berlin.de>'
 FABRIC = {
     "DEPLOY_TOOL": "rsync",  # Deploy with "git", "hg", or "rsync"
     "SSH_USER": "dylan",  # VPS SSH username
-    "HOSTS": ["159.89.14.220"],  # The IP address of your VPS
+    "HOSTS": ["188.166.22.191"],  # The IP address of your VPS
     "DOMAINS": ["aynurotyakmaz.com",
                 "www.aynurotyakmaz.com"],
     "REQUIREMENTS_PATH": "requirements.txt",  # Project's pip requirements
