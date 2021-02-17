@@ -18,7 +18,7 @@ FILE_UPLOAD_PERMISSIONS = 0o644
 ALLOWED_HOSTS = ["aynurotyakmaz.com", "www.aynurotyakmaz.com"]
 
 ADMINS = [('Dylan Peter Hayward', "dylanpeterhayward@gmail.com")]
-SERVER_EMAIL = '"Mr. Robot" <serverbot@transmitter-berlin.de>'
+SERVER_EMAIL = '"Mr. Robot" <serverbot@aynurotyakmaz.com>'
 
 FABRIC = {
     "DEPLOY_TOOL": "rsync",  # Deploy with "git", "hg", or "rsync"
